@@ -10,7 +10,7 @@ const colorVars = {
 // fonts
 const fontVars = {
   titleFont: `'Fuzzy Bubbles', cursive`,
-  mainFont: `'Urbanist', sans-serif`,
+  mainFont: `'Rubik', sans-serif`,
 };
 
 module.exports = {

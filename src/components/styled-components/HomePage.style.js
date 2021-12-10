@@ -28,6 +28,7 @@ export const StyledHomePage = styled(HomePage)`
     & h2 {
       font-size: 55px;
       text-align: center;
+      font-weight: 200;
     }
 
     &.solo {
