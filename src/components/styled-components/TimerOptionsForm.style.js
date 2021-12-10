@@ -11,10 +11,17 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
   margin-top: 25px;
   position: center;
 
+  & .form-optn {
+    /* border: solid red 3px; */
+    align-self: flex-start;
+    margin: 10px 0 10px 0;
+  }
+
   & form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-items: center;
   }
 
     & label {
@@ -23,14 +30,15 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
     }
 
     & input {
-      border: none;
+      border: solid 2px ${colorVars.purple};
+      background:  ${colorVars.primaryLight};
+      color: ${colorVars.purple};
       border-radius: 5px;
       padding: 5px;
-      height: 40px;
+      height: 35px;
       width: 80px;
-      /* margin-right: 50px; */
       margin-bottom: 10px;
-      font-size: 25px;
+      font-size: 20px;
     }
   }
 `;

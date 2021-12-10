@@ -8,8 +8,7 @@ const TimerOptionsForm = ({ className }) => {
         <div className="form-optn">
           {/* eslint-disable-next-line */}
         <label htmlFor="focus-period">Focus period: </label>
-          <input type="number" id="focus-period" name="focus-period" />
-          mins
+          <input type="number" id="focus-period" name="focus-period" /> mins
         </div>
         <div className="form-optn">
           {/* eslint-disable-next-line */}
