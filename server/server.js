@@ -100,43 +100,6 @@ app.post('/logout', (req, res) => {
   res.json({ auth: false });
 });
 
-// -------------------- posts routes -------------------- //
-
-// GET: posts
-app.get('/posts', (req, res) => {
-  const text = `SELECT * FROM posts;`;
-  // const values = [req.session.user];
-  db.query(text)
-    .then((results) => {
-      console.log(results.rows);
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
-
-// DELETE: delete a post (only by same user)
-app.delete('/posts/:postId', (req, res) => {
-  if (!req.session || !req.session.user) {
-    const text = `DELETE
-                  FROM posts
-                  WHERE id = $1
-                  RETURNING id;`; // SQL query here
-    const values = [req.params.postId];
-    db.query(text, values)
-      .then((data) => {
-        console.log('☑️ DELETED post (server side): ', res.json({ deleted: data.rows }));
-        res.json({ deleted: data.rows });
-      })
-      .catch((err) => {
-        console.log('❌ Error deleting post (server side): ', err);
-        res.json({ deleted: false });
-      });
-  }
-});
-
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {

@@ -9,7 +9,6 @@ export const StyledFooter = styled(Footer)`
   width: 100vw;
   color: ${colorVars.primaryLight};
   position: static;
-  /* margin-top: 100px; */
 
   & h4 {
     font-size: 20px;

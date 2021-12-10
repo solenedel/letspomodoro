@@ -52,12 +52,7 @@ const Nav = ({ className }) => {
         <Link to="/" id="logo-link">
           <div id="logo">Template website</div>
         </Link>
-        <ul>
-          <Link to="/posts">
-            <li className="nav-link">Posts</li>
-          </Link>
-          {user.auth ? LogoutButton() : LoginButton()}
-        </ul>
+        <ul>{user.auth ? LogoutButton() : LoginButton()}</ul>
       </div>
     </nav>
   );
