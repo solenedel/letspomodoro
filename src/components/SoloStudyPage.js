@@ -8,7 +8,7 @@ const SoloStudyPage = ({ className }) => {
       <h2>Solo study</h2>
       <p>
         Choose your pomodoro timer options, then click on the START TIMER button when you are ready
-        to begin.
+        to begin. In solo study mode, you cannot share the same timer with other users.
       </p>
       <h3>
         {' '}
