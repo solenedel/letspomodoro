@@ -1,4 +1,5 @@
 import React from 'react';
+import { StyledTimerOptionsForm } from './styled-components/TimerOptionsForm.style';
 
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
@@ -13,6 +14,8 @@ const SoloStudyPage = ({ className }) => {
         {' '}
         <i className="fas fa-stopwatch-20" /> Timer options
       </h3>
+
+      <StyledTimerOptionsForm />
     </div>
   );
 };
