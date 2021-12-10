@@ -38,6 +38,11 @@ export const GlobalStyles = createGlobalStyle`
     text-decoration: none;
   }
 
+  button {
+    font-family:  ${fontVars.mainFont};
+    font-weight: 500;
+  }
+  
   button:hover, a:hover {
     cursor: pointer;
   }

@@ -48,6 +48,7 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
     border: none;
     border-radius: 5px;
     padding: 7px;
-    font-size: 25px;
+    font-size: 22px;
+    color: ${colorVars.primaryLight};
   }
 `;

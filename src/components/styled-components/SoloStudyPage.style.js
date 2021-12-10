@@ -23,6 +23,7 @@ export const StyledSoloStudyPage = styled(SoloStudyPage)`
   & h3 {
     font-size: 27px;
     margin-top: 80px;
+    font-weight: 500;
     color: ${colorVars.mainText};
 
     & i {

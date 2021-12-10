@@ -12,7 +12,7 @@ const SoloStudyPage = ({ className }) => {
       </p>
       <h3>
         {' '}
-        <i className="fas fa-stopwatch-20" /> Timer settings
+        <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
       <StyledTimerOptionsForm />

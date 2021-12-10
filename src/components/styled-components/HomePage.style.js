@@ -10,7 +10,6 @@ export const StyledHomePage = styled(HomePage)`
   justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
-  border: solid blue 3px;
 
   .join-room {
     height: auto;
