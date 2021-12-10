@@ -18,13 +18,13 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100%;
 
     div#logo {
-      font-size: 45px;
+      font-size: 55px;
       font-family: ${fontVars.titleFont}; 
       margin-left: 20px;
     }
 
     li, p, div {
-      font-family: ${fontVars.mainFont};
+      font-family: ${fontVars.titleFont};
     }
 
     li {

@@ -4,8 +4,14 @@ import Nav from '../Nav';
 import { colorVars } from './css-variables';
 
 export const StyledNav = styled(Nav)`
-  background-color: ${colorVars.primaryDark};
+  background-color: ${colorVars.primaryLight};
   height: 90px;
+
+  & img {
+    height: 70px;
+    opacity: 0.9;
+    margin-left: 30px;
+  }
 
   & #nav-flexbox {
     display: flex;
@@ -14,8 +20,10 @@ export const StyledNav = styled(Nav)`
   }
 
   #logo-link {
-    color: ${colorVars.primaryLight};
+    color: ${colorVars.primaryDark};
     text-decoration: none;
+    display: flex;
+    align-items: baseline;
   }
 
   & ul {
@@ -29,10 +37,10 @@ export const StyledNav = styled(Nav)`
       font-size: 28px;
       transition: color 0.4s;
       text-decoration: none;
-      color: ${colorVars.primaryLight};
+      color: ${colorVars.primaryDark};
 
       &:visited {
-        color: ${colorVars.primaryLight};
+        color: ${colorVars.primaryDark};
       }
 
       &:hover {
