@@ -31,7 +31,7 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     &.solo {
-      border: solid ${colorVars.yellow} 3px;
+      border: solid ${colorVars.yellow} 2px;
       color: ${colorVars.yellow};
 
       &:hover {
@@ -40,7 +40,7 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     &.group {
-      border: solid ${colorVars.purple} 3px;
+      border: solid ${colorVars.purple} 2px;
       color: ${colorVars.purple};
 
       &:hover {
