@@ -4,13 +4,14 @@ import Nav from '../Nav';
 import { colorVars } from './css-variables';
 
 export const StyledNav = styled(Nav)`
-  background-color: ${colorVars.primaryLight};
-  height: 90px;
+  padding: 15px 10px 0 15px;
+  height: 100px;
 
   & img {
     height: 50px;
-    opacity: 0.9;
+    opacity: 0.8;
     margin-left: 30px;
+    transform: rotate(20deg);
   }
 
   & #nav-flexbox {

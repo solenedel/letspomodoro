@@ -4,7 +4,7 @@ import { HomePage } from '../HomePage';
 import { colorVars } from './css-variables';
 
 export const StyledHomePage = styled(HomePage)`
-  margin-top: 120px;
+  margin: 120px 40px 0 40px;
   height: 100vh;
   width: 100vw;
   justify-content: space-around;
@@ -37,7 +37,7 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     &.solo {
-      border: solid ${colorVars.yellow} 2px;
+      border: solid ${colorVars.yellow} 3px;
       color: ${colorVars.yellow};
 
       &:hover {
@@ -46,7 +46,7 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     &.group {
-      border: solid ${colorVars.purple} 2px;
+      border: solid ${colorVars.purple} 3px;
       color: ${colorVars.purple};
 
       &:hover {
