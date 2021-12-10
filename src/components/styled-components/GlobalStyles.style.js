@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     height: 100%; 
     min-height: 100%;
+    color: ${colorVars.mainText};
 
     div#logo {
       font-size: 55px;

@@ -5,6 +5,7 @@ const colorVars = {
   yellow: '#85EEBA',
   purple: '#FBA7FF',
   linkHover: '#F9C6FE',
+  mainText: '#ACC2FF',
 };
 
 // fonts
