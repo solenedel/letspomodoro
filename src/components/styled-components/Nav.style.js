@@ -8,7 +8,7 @@ export const StyledNav = styled(Nav)`
   height: 90px;
 
   & img {
-    height: 70px;
+    height: 50px;
     opacity: 0.9;
     margin-left: 30px;
   }

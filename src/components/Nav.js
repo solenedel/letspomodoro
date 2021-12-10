@@ -51,7 +51,7 @@ const Nav = ({ className }) => {
       <div id="nav-flexbox">
         <Link to="/" id="logo-link">
           <div id="logo">Let&#39;s Pomodoro</div>
-          <img src="./images/tomato.png" alt="tomato icon" />
+          <img src="./images/timer.png" alt="tomato icon" />
         </Link>
         <ul>{user.auth ? LogoutButton() : LoginButton()}</ul>
       </div>

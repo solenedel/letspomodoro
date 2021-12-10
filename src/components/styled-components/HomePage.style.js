@@ -12,14 +12,19 @@ export const StyledHomePage = styled(HomePage)`
   flex-wrap: wrap;
 
   .join-room {
-    height: 20vh;
+    height: auto;
     width: fit-content;
-    padding: 0 20px 0 20px;
+    padding: 20px;
     border-radius: 15px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0.7;
+
+    & i {
+      font-size: 70px;
+    }
 
     &:hover {
       opacity: 1;
