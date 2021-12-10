@@ -32,4 +32,8 @@ export const GlobalStyles = createGlobalStyle`
       list-style-type: none;
     }
   }
+
+  a, a:hover, a:active, a:visited {
+    text-decoration: none;
+  }
 `;

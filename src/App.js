@@ -7,6 +7,7 @@ import { AppContainer } from './components/styled-components/AppContainer';
 import { PageContainer } from './components/styled-components/PageContainer';
 import { StyledFooter } from './components/styled-components/Footer.style';
 import { StyledLoginPage } from './components/styled-components/LoginPage.style';
+import { StyledSoloStudyPage } from './components/styled-components/SoloStudyPage.style';
 import { AppContext } from './context';
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
               </Route>
               <Route exact path="/login">
                 <StyledLoginPage />
+              </Route>
+              <Route exact path="/solo-study">
+                <StyledSoloStudyPage />
               </Route>
             </Switch>
           </PageContainer>
