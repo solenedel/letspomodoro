@@ -50,7 +50,7 @@ const Nav = ({ className }) => {
     <nav className={className}>
       <div id="nav-flexbox">
         <Link to="/" id="logo-link">
-          <div id="logo">Template website</div>
+          <div id="logo">Let&#39;s Pomodoro</div>
         </Link>
         <ul>{user.auth ? LogoutButton() : LoginButton()}</ul>
       </div>
