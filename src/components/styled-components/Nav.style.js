@@ -4,7 +4,7 @@ import Nav from '../Nav';
 import { colorVars } from './css-variables';
 
 export const StyledNav = styled(Nav)`
-  padding: 15px 10px 0 15px;
+  padding: 15px 10px 0 10px;
   height: 100px;
 
   & img {

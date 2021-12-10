@@ -37,4 +37,8 @@ export const GlobalStyles = createGlobalStyle`
   a, a:hover, a:active, a:visited {
     text-decoration: none;
   }
+
+  button:hover, a:hover {
+    cursor: pointer;
+  }
 `;

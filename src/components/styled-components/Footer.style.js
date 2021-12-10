@@ -4,11 +4,13 @@ import Footer from '../Footer';
 import { colorVars, fontVars } from './css-variables';
 
 export const StyledFooter = styled(Footer)`
-  background-color: ${colorVars.primaryDark};
-  height: 115px;
+  color: ${colorVars.primaryDark};
+  height: 55px;
   width: 100vw;
-  color: ${colorVars.primaryLight};
+  background-color: ${colorVars.primaryLight};
   position: static;
+  margin-top: 70px;
+  border-top: solid 2px ${colorVars.primaryDark};
 
   & h4 {
     font-size: 20px;

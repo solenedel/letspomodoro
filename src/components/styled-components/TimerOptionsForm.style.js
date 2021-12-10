@@ -7,12 +7,12 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
   font-size: 25px;
   color: ${colorVars.mainText};
   width: 80vw;
-  height: 20vh;
-  margin-top: 25px;
+  height: fit-content;
+  margin: 25px 0 0 0;
   position: center;
 
+
   & .form-optn {
-    /* border: solid red 3px; */
     align-self: flex-start;
     margin: 10px 0 10px 0;
   }
@@ -21,7 +21,8 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    /* justify-content: flex-start; */
   }
 
     & label {
@@ -40,5 +41,13 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
       margin-bottom: 10px;
       font-size: 20px;
     }
+  }
+
+  button { 
+    background: ${colorVars.yellow};
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 25px;
   }
 `;
