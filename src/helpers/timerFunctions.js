@@ -1,39 +1,35 @@
 /* eslint-disable */
 
 
-async function startTimer() {
-  let seconds = 1;
+async function startTimer(secondsToCount) {
+  let seconds = 0;
 
-  const callback = () => {
-    console.log('seconds: ', seconds);
+  const intervalCallback = () => {
     seconds ++;
+    console.log('seconds: ', seconds);
+
+    if (seconds === secondsToCount) {
+      console.log('timer done!');
+      clearInterval(intervalFunc);
+    }
   }
-  setInterval(callback, [1000]);
-  // console.log('Seconds passed: ', seconds ++);
+  
+  const intervalFunc = setInterval(intervalCallback, 1000);
   return seconds;
 };
-
-// async function startBreakTimer() {
-//   let seconds = 1;
-//   console.log('Break seconds passed: ', seconds ++);
-//   return seconds;
-// };
 
 function startSession(focusSec, breakSec, cycles) {
 
   // loop through the number of cycles
-  for (let i = 1; i <= cycles; i++) {
-    console.log('start of cycle ' + i);
+  let currentCycle = 1;
+  while (currentCycle <= cycles) {
+     console.log('start of cycle ' + currentCycle);
      startTimer(focusSec).then(() => startTimer(breakSec));
-     i ++;
+     currentCycle ++;
   }
  
 };
 
+
+// startSession is invoked in the onClick handler of the START button
 startSession(10, 10, 3);
-
-// startSession is invoked by onClick handler of the START button
-// const startSession = (focusTime, breakTime, cycles) => {
-
-//   setInterval(startFocusTimer, [1000, focusTime]);
-// };
