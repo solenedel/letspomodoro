@@ -1,35 +1,43 @@
 /* eslint-disable */
 
+// startTimer is called twice in each cycle (one for focus time and one for break time)
+function startTimer(secondsToCount) {
 
-async function startTimer(secondsToCount) {
-  let seconds = 0;
+  return new Promise(resolve => {
+    let seconds = 0;
 
-  const intervalCallback = () => {
-    seconds ++;
-    console.log('seconds: ', seconds);
+    const intervalCallback = () => {
+      seconds ++;
+      console.log('seconds: ', seconds);
 
-    if (seconds === secondsToCount) {
-      console.log('timer done!');
-      clearInterval(intervalFunc);
+      if (seconds === secondsToCount) {
+        console.log('timer done!');
+        clearInterval(intervalFunc);
+        resolve('resolved');
+      }
     }
-  }
   
-  const intervalFunc = setInterval(intervalCallback, 1000);
-  return seconds;
+    const intervalFunc = setInterval(intervalCallback, 1000);
+    // return seconds;
+  })
+  
 };
 
-function startSession(focusSec, breakSec, cycles) {
+
+// startSession loops through the number of cycles, calling startTimer
+async function startSession(focusSec, breakSec, cycles) {
 
   // loop through the number of cycles
   let currentCycle = 1;
   while (currentCycle <= cycles) {
      console.log('start of cycle ' + currentCycle);
-     startTimer(focusSec).then(() => startTimer(breakSec));
+     await startTimer(focusSec);
+     await startTimer(breakSec);
      currentCycle ++;
   }
- 
+  console.log('timer finished');
 };
 
 
 // startSession is invoked in the onClick handler of the START button
-startSession(10, 10, 3);
+startSession(5, 2, 3);
