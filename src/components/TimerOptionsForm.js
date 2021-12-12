@@ -4,25 +4,21 @@ import { startSession } from '../helpers/timerFunctions';
 // eslint-disable-next-line
 const TimerOptionsForm = ({ className }) => {
   const [timerSettings, setTimerSettings] = useState({
-    focusPeriod: '',
-    breakPeriod: '',
-    cycles: '',
+    focusPeriod: 0,
+    breakPeriod: 0,
+    cycles: 0,
   });
 
   const handleInputChangeFocus = (e) => {
-    console.log('FOCUS PERIOD: ', e.target.value);
-    setTimerSettings({ ...timerSettings, focusPeriod: e.target.value });
+    setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
 
   const handleInputChangeBreak = (e) => {
-    console.log('BREAK PERIOD: ', e.target.value);
-    setTimerSettings({ ...timerSettings, breakPeriod: e.target.value });
+    setTimerSettings((prev) => ({ ...prev, breakPeriod: Number(e.target.value) }));
   };
 
   const handleInputChangeCycles = (e) => {
-    console.log('CYCLES: ', e.target.value);
-    setTimerSettings({ ...timerSettings, cycles: e.target.value });
-    console.log('TIMER SETTINGS: ', timerSettings);
+    setTimerSettings((prev) => ({ ...prev, cycles: Number(e.target.value) }));
   };
 
   const handleTimerOptnSubmit = (e) => {
@@ -85,7 +81,13 @@ const TimerOptionsForm = ({ className }) => {
           Confirm
         </button>
       </form>
-      <button type="button" id="start-session" onClick={() => startSession(5, 3, 2)}>
+      <button
+        type="button"
+        id="start-session"
+        onClick={() =>
+          startSession(timerSettings.focusPeriod, timerSettings.breakPeriod, timerSettings.cycles)
+        }
+      >
         Start my session
         <i className="fas fa-stopwatch" />
       </button>

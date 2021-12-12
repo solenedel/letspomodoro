@@ -1,6 +1,8 @@
 /* eslint-disable */
 // this file contains the logic for the pomodoro timer. 
 
+// NOTE: need to convert the mminutes entered by user into milliseconds (min * 60 * 1000)
+
 // startTimer is called twice in each cycle (one for focus time and one for break time)
 function startTimer(secondsToCount) {
 
