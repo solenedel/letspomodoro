@@ -40,8 +40,6 @@ export const StyledSoloStudyPage = styled(SoloStudyPage)`
     font-weight: 600;
     border: none;
     border-radius: 5px;
-    padding: 8px;
-    align-self: center;
 
     & i {
       margin-left: 10px;

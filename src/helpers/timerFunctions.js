@@ -40,5 +40,6 @@ async function startSession(focusSec, breakSec, cycles) {
 };
 
 
-// startSession is invoked in the onClick handler of the START button
-startSession(5, 2, 3);
+
+
+module.exports = {startSession};

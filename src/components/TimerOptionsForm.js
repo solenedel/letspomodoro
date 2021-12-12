@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { startSession } from '../helpers/timerFunctions';
 
 // eslint-disable-next-line
 const TimerOptionsForm = ({ className }) => {
@@ -83,11 +84,11 @@ const TimerOptionsForm = ({ className }) => {
         <button type="submit" onClick={handleTimerOptnSubmit}>
           Confirm
         </button>
-        <button type="button" id="start-session">
-          Start my session
-          <i className="fas fa-stopwatch" />
-        </button>
       </form>
+      <button type="button" id="start-session" onClick={() => startSession(5, 3, 2)}>
+        Start my session
+        <i className="fas fa-stopwatch" />
+      </button>
     </section>
   );
 };
