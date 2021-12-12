@@ -5,7 +5,8 @@ import { colorVars } from './css-variables';
 
 export const StyledSoloStudyPage = styled(SoloStudyPage)`
   margin: 100px 10% 0 10%;
-  height: 80vh;
+  height: 100vh;
+  margin-bottom: 100px;
   color: ${colorVars.yellow};
 
   & h2 {
@@ -29,5 +30,15 @@ export const StyledSoloStudyPage = styled(SoloStudyPage)`
     & i {
       margin-right: 10px;
     }
+  }
+
+  #start-session {
+    margin: 60px 0 0 0;
+    font-size: 28px;
+    background: #ffddb0;
+    color: ${colorVars.primaryLight};
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
   }
 `;

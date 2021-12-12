@@ -1,4 +1,5 @@
 /* eslint-disable */
+// this file contains the logic for the pomodoro timer. 
 
 // startTimer is called twice in each cycle (one for focus time and one for break time)
 function startTimer(secondsToCount) {
