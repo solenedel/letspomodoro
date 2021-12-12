@@ -83,6 +83,10 @@ const TimerOptionsForm = ({ className }) => {
         <button type="submit" onClick={handleTimerOptnSubmit}>
           Confirm
         </button>
+        <button type="button" id="start-session">
+          Start my session
+          <i className="fas fa-stopwatch" />
+        </button>
       </form>
     </section>
   );
