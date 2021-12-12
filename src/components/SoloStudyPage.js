@@ -16,6 +16,7 @@ const SoloStudyPage = ({ className }) => {
       </h3>
 
       <StyledTimerOptionsForm />
+      <button type="button">Start pomodoro session</button>
     </div>
   );
 };

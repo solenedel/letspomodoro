@@ -80,7 +80,7 @@ const TimerOptionsForm = ({ className }) => {
           />{' '}
           (one cycle = 1 focus period + 1 break period)
         </div>
-        <button type="submit" onSubmit={handleTimerOptnSubmit}>
+        <button type="submit" onClick={handleTimerOptnSubmit}>
           Confirm
         </button>
       </form>

@@ -5,7 +5,7 @@ import { GlobalStyles } from './components/styled-components/GlobalStyles.style'
 import { StyledHomePage } from './components/styled-components/HomePage.style';
 import { AppContainer } from './components/styled-components/AppContainer';
 import { PageContainer } from './components/styled-components/PageContainer';
-import { StyledFooter } from './components/styled-components/Footer.style';
+// import { StyledFooter } from './components/styled-components/Footer.style';
 import { StyledLoginPage } from './components/styled-components/LoginPage.style';
 import { StyledSoloStudyPage } from './components/styled-components/SoloStudyPage.style';
 import { AppContext } from './context';
@@ -36,7 +36,7 @@ function App() {
               </Route>
             </Switch>
           </PageContainer>
-          <StyledFooter />
+          {/* <StyledFooter /> */}
         </AppContainer>
       </Router>
     </AppContext.Provider>
