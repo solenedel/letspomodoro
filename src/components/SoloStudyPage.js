@@ -18,17 +18,40 @@ const SoloStudyPage = ({ className }) => {
     cycles: '',
   });
 
+// helper function: convert minutes entered by user into hours and minutes
+  const timeConverter = () => {
+     let countDownHours;
+     let countDownMinutes;
+
+     if ((timerSettings.focusPeriod / 60) < 1) {
+       countDownHours = 0;
+       countDownMinutes = timerSettings.focusPeriod;
+     } else {
+       countDownHours = Number((timerSettings.focusPeriod / 60).toString().split('.')[0]);
+       countDownMinutes = timerSettings.focusPeriod - (60 * countDownHours);
+     }
+     
+      //  console.log('countDownHours: ', countDownHours );
+      // console.log('countDownMinutes: ', countDownMinutes );
+
+      return [countDownHours, countDownMinutes];
+  }
+   
+
 
 
   const startTimer = () => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDate = new Date().getDate();
-    const countdownHours = timerSettings.focusPeriod / 60; // user specifies time in minutes
-    const countdownMinutes = timerSettings.focusPeriod;
+    const hoursToCount = (timeConverter())[0];
+    const minutesToCount = (timeConverter())[1];
 
-    const countDownDate = new Date(currentYear, currentMonth, currentDate);
+    const countDownDate = new Date(currentYear, currentMonth, currentDate, hoursToCount, minutesToCount);
+    console.log('countDownDate', countDownDate);
   };
+
+  startTimer();
 
   return (
     <div className={className}>

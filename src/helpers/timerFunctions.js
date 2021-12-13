@@ -21,7 +21,6 @@ function startTimer(secondsToCount) {
     }
   
     const intervalFunc = setInterval(intervalCallback, 1000);
-    // return seconds;
   })
   
 };
