@@ -52,4 +52,18 @@ export const StyledTimerOptionsForm = styled(TimerOptionsForm)`
     margin-top: 20px;
     color: ${colorVars.primaryLight};
   }
+
+   #start-session, #pause-session {
+    margin: 60px 40px 0 0;
+    font-size: 28px;
+    background: #BD64DE;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+
+    & i {
+      margin-left: 10px;
+    }
+  }
 `;

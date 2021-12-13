@@ -3,5 +3,18 @@ import styled from 'styled-components';
 import Clock from '../Clock';
 
 export const StyledClock = styled(Clock)`
-  border: solid red 3px;
+  border: solid blue 2px;
+  padding: 40px;
+
+  .clock {
+    display: flex;
+
+    & div {
+      margin-left: 20px;
+
+      & p {
+        font-size: 50px;
+      }
+    }
+  }
 `;

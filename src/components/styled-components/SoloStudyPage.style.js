@@ -31,18 +31,4 @@ export const StyledSoloStudyPage = styled(SoloStudyPage)`
       margin-right: 10px;
     }
   }
-
-  #start-session {
-    margin: 60px 0 0 0;
-    font-size: 28px;
-    background: #ffddb0;
-    color: #b73269;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-
-    & i {
-      margin-left: 10px;
-    }
-  }
 `;
