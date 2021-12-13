@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyledTimerOptionsForm } from './styled-components/TimerOptionsForm.style';
+import Clock from './Clock';
 
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
+  const [clockHours, setClockHours] = useState();
+  const [clockMinutes, setClockMinutes] = useState();
+  const [clockSeconds, setClockSeconds] = useState();
   return (
     <div className={className}>
       <h2>Solo study</h2>
@@ -16,6 +20,7 @@ const SoloStudyPage = ({ className }) => {
       </h3>
 
       <StyledTimerOptionsForm />
+      <Clock clockHours={clockHours} clockMinutes={clockMinutes} clockSeconds={clockSeconds} />
     </div>
   );
 };
