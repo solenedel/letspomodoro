@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Clock = ({ className }) => {
+// eslint-disable-next-line
+const Clock = ({ className, clockHours, clockMinutes, clockSeconds }) => {
   return <section className={className}> Clock </section>;
 };
 
