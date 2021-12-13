@@ -9,11 +9,11 @@ const Clock = ({ className, clockHours, clockMinutes, clockSeconds }) => {
           <div className="hours">
             <p>{clockHours}</p>Hours
           </div>
-
+          <span>:</span>
           <div className="minutes">
             <p>{clockMinutes}</p>Minutes
           </div>
-
+          <span>:</span>
           <div className="minutes">
             <p>{clockSeconds}</p>Seconds
           </div>
