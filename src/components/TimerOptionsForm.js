@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { startSession } from '../helpers/timerFunctions';
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className }) => {
+const TimerOptionsForm = ({ className, setClockSeconds }) => {
   const [timerSettings, setTimerSettings] = useState({
     focusPeriod: 0,
     breakPeriod: 0,

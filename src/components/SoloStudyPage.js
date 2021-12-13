@@ -10,6 +10,22 @@ const SoloStudyPage = ({ className }) => {
   const [clockMinutes, setClockMinutes] = useState();
   // eslint-disable-next-line
   const [clockSeconds, setClockSeconds] = useState();
+
+  const startTimer = () => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const currentDate = new Date().getDate();
+
+    const countDownDate = new Date(
+      currentYear,
+      currentMonth,
+      currentDate,
+      clockHours,
+      clockMinutes,
+      clockSeconds
+    );
+  };
+
   return (
     <div className={className}>
       <h2>Solo study</h2>

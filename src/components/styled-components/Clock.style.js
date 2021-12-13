@@ -17,10 +17,10 @@ export const StyledClock = styled(Clock)`
     }
 
     & div {
-      font-family: ${fontVars.clockFont};
-
+      font-size: 20px;
       & p {
-        font-size: 50px;
+        font-size: 70px;
+        margin-bottom: 15px;
         font-family: ${fontVars.clockFont};
       }
     }
