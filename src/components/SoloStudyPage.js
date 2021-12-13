@@ -11,20 +11,26 @@ const SoloStudyPage = ({ className }) => {
   // eslint-disable-next-line
   const [clockSeconds, setClockSeconds] = useState();
 
-  const startTimer = () => {
-    const currentYear = new Date().getFullYear();
-    const currentMonth = new Date().getMonth();
-    const currentDate = new Date().getDate();
+  const [timerSettings, setTimerSettings] = useState({
+    focusPeriod: 0,
+    breakPeriod: 0,
+    cycles: 0,
+  });
 
-    const countDownDate = new Date(
-      currentYear,
-      currentMonth,
-      currentDate,
-      clockHours,
-      clockMinutes,
-      clockSeconds
-    );
-  };
+  // const startTimer = () => {
+  //   const currentYear = new Date().getFullYear();
+  //   const currentMonth = new Date().getMonth();
+  //   const currentDate = new Date().getDate();
+
+  //   const countDownDate = new Date(
+  //     currentYear,
+  //     currentMonth,
+  //     currentDate,
+  //     clockHours,
+  //     clockMinutes,
+  //     clockSeconds
+  //   );
+  // };
 
   return (
     <div className={className}>
@@ -38,7 +44,7 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm />
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} />
       <StyledClock
         clockHours={clockHours}
         clockMinutes={clockMinutes}

@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
+/* eslint react/prop-types: 0 */
+import React from 'react';
 import { startSession } from '../helpers/timerFunctions';
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className, setClockSeconds }) => {
-  const [timerSettings, setTimerSettings] = useState({
-    focusPeriod: 0,
-    breakPeriod: 0,
-    cycles: 0,
-  });
-
+const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -24,6 +19,7 @@ const TimerOptionsForm = ({ className, setClockSeconds }) => {
   const handleTimerOptnSubmit = (e) => {
     e.preventDefault();
 
+    // eslint-disable-next-line
     if (timerSettings.focusPeriod && timerSettings.breakPeriod && timerSettings.cycles) {
       console.log('TIMER SETTINGS: ', timerSettings);
     }
