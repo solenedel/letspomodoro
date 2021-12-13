@@ -1,5 +1,10 @@
 # 🍅 Let's Pomodoro
 
+## TO DO
+
+- implement timer countdown UI
+- start group study feature
+
 ## Features
 
 ### non-logged in users
