@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import { StyledTimerOptionsForm } from './styled-components/TimerOptionsForm.style';
 import { StyledClock } from './styled-components/Clock.style';
@@ -12,25 +13,22 @@ const SoloStudyPage = ({ className }) => {
   const [clockSeconds, setClockSeconds] = useState();
 
   const [timerSettings, setTimerSettings] = useState({
-    focusPeriod: 0,
-    breakPeriod: 0,
-    cycles: 0,
+    focusPeriod: '',
+    breakPeriod: '',
+    cycles: '',
   });
 
-  // const startTimer = () => {
-  //   const currentYear = new Date().getFullYear();
-  //   const currentMonth = new Date().getMonth();
-  //   const currentDate = new Date().getDate();
 
-  //   const countDownDate = new Date(
-  //     currentYear,
-  //     currentMonth,
-  //     currentDate,
-  //     clockHours,
-  //     clockMinutes,
-  //     clockSeconds
-  //   );
-  // };
+
+  const startTimer = () => {
+    const currentYear = new Date().getFullYear();
+    const currentMonth = new Date().getMonth();
+    const currentDate = new Date().getDate();
+    const countdownHours = timerSettings.focusPeriod / 60; // user specifies time in minutes
+    const countdownMinutes = timerSettings.focusPeriod;
+
+    const countDownDate = new Date(currentYear, currentMonth, currentDate);
+  };
 
   return (
     <div className={className}>
