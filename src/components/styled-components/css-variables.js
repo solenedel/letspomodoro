@@ -12,6 +12,7 @@ const colorVars = {
 const fontVars = {
   titleFont: `'Fuzzy Bubbles', cursive`,
   mainFont: `'Rubik', sans-serif`,
+  clockFont: `'Share Tech Mono', monospace`,
 };
 
 module.exports = {

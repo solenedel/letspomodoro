@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import Clock from '../Clock';
+import { fontVars } from './css-variables';
 
 export const StyledClock = styled(Clock)`
   padding: 40px;
@@ -16,10 +17,11 @@ export const StyledClock = styled(Clock)`
     }
 
     & div {
-      margin-left: 20px;
+      font-family: ${fontVars.clockFont};
 
       & p {
         font-size: 50px;
+        font-family: ${fontVars.clockFont};
       }
     }
   }

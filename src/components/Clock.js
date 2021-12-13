@@ -7,15 +7,15 @@ const Clock = ({ className, clockHours, clockMinutes, clockSeconds }) => {
       <section className={className} id="timer-container">
         <div className="clock">
           <div className="hours">
-            <p>{clockHours}</p>Hours
+            <p>{clockHours}</p>hours
           </div>
           <span>:</span>
           <div className="minutes">
-            <p>{clockMinutes}</p>Minutes
+            <p>{clockMinutes}</p>minutes
           </div>
           <span>:</span>
           <div className="minutes">
-            <p>{clockSeconds}</p>Seconds
+            <p>{clockSeconds}</p>seconds
           </div>
         </div>
       </section>
