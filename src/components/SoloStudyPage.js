@@ -4,8 +4,11 @@ import { StyledClock } from './styled-components/Clock.style';
 
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
+  // eslint-disable-next-line
   const [clockHours, setClockHours] = useState();
+  // eslint-disable-next-line
   const [clockMinutes, setClockMinutes] = useState();
+  // eslint-disable-next-line
   const [clockSeconds, setClockSeconds] = useState();
   return (
     <div className={className}>
