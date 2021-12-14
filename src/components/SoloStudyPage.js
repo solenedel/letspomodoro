@@ -6,7 +6,7 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
-  const [hours, setHours] = useState(1);
+  const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(30);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
@@ -19,6 +19,22 @@ const SoloStudyPage = ({ className }) => {
   });
 
   useEffect(() => {
+    let interval = setInterval(() => {
+      // NOTE: see what happens without clearing interval (bad practice)
+      clearInterval(interval);
+
+      if (seconds === 0) {
+        if (minutes !== 0) {
+          setSeconds(59);
+          setMinutes(minutes - 1);
+        } else {
+          // reached the end of the timer
+
+        }
+      } else {
+        setSeconds(seconds - 1);
+      }
+    }, 1000)
 
   }, [seconds]);
 
