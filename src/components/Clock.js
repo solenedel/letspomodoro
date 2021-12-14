@@ -1,32 +1,19 @@
 import React from 'react';
 
 // eslint-disable-next-line
-const Clock = ({ className, clockHours, clockMinutes, clockSeconds }) => {
+const Clock = ({ className, timerHours, timerMinutes, timerSeconds, displayMessage }) => {
   return (
     <>
       <section className={className} id="timer-container">
         <div className="clock">
-          <div className="hours">
-            <p>0</p>hours
-          </div>
-          <span>:</span>
-          <div className="minutes">
-            <p>0</p>minutes
-          </div>
-          <span>:</span>
-          <div className="minutes">
-            <p>0</p>seconds
+          <div className="message">{displayMessage && <div>Break time!</div>}</div>
+          <div className="timer">
+            {timerHours} : {timerMinutes} : {timerSeconds}
           </div>
         </div>
       </section>
     </>
   );
-};
-
-Clock.defaultProps = {
-  clockHours: 10,
-  clockMinutes: 10,
-  clockSeconds: 10,
 };
 
 export default Clock;

@@ -6,11 +6,27 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
+  const [hours, setHours] = useState(1);
+  const [minutes, setMinutes] = useState(30);
+  const [seconds, setSeconds] = useState(0);
+  const [displayMessage, setDisplayMessage] = useState(false);
+
+
   const [timerSettings, setTimerSettings] = useState({
     focusPeriod: '',
     breakPeriod: '',
     cycles: '',
   });
+
+  useEffect(() => {
+
+  }, [seconds]);
+
+
+  // prepend 0 if values are less than 10
+  const timerHours = (hours < 10 ? `0${hours}` : hours);
+  const timerMinutes = (minutes < 10 ? `0${minutes}` : minutes);
+  const timerSeconds = (seconds < 10 ? `0${seconds}` : seconds);
 
   
 
@@ -26,8 +42,8 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} />
-      <StyledClock
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings}  />
+      <StyledClock timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>
   );
