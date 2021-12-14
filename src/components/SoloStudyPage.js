@@ -7,7 +7,7 @@ import { StyledClock } from './styled-components/Clock.style';
 const SoloStudyPage = ({ className }) => {
 
   const [hours, setHours] = useState();
-  const [minutes, setMinutes] = useState(30);
+  const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
 
@@ -29,7 +29,12 @@ const SoloStudyPage = ({ className }) => {
           setMinutes(minutes - 1);
         } else {
           // reached the end of the timer
+          let minutes = displayMessage ? 24 : 4;
+          let seconds = 59;
 
+          setSeconds(seconds);
+          setMinutes(minutes);
+          setDisplayMessage(!displayMessage);
         }
       } else {
         setSeconds(seconds - 1);
