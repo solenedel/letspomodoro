@@ -41,9 +41,16 @@ const SoloStudyPage = ({ className }) => {
     }, 1000);
   };
 
-  // BUG: timer is starting directly before pressing the start button
+// BUG: reloading page keeps current time but does not restart session
+  useEffect(() => {
+    setMinutes(JSON.parse(window.localStorage.getItem('minutes')));
+    setSeconds(JSON.parse(window.localStorage.getItem('seconds')));
+  }, []);
+
   useEffect(() => {
     if (sessionON) startSession();
+    window.localStorage.setItem('minutes', minutes);
+    window.localStorage.setItem('seconds', seconds);
   }, [seconds]);
 
 
