@@ -94,16 +94,23 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         type="button"
         id="start-session"
         onClick={() => {
-          setSessionON(true);
+          setSessionON(!sessionON);
+          console.log('sessionON ', sessionON);
           startSession();
         }}
       >
         Start session
         <i className="fas fa-stopwatch" />
       </button>
-      {/* note: onClick -> change text to resume session */}
-      <button type="button" id="pause-session" onClick={() => setSessionON(!sessionON)}>
-        {/* TO DO: dynamic text: pause/resume */}
+      <button
+        type="button"
+        id="pause-session"
+        onClick={() => {
+          setSessionON(!sessionON);
+          console.log('sessionON ', sessionON);
+          startSession();
+        }}
+      >
         {sessionON ? 'Pause session' : 'Resume session'}
         {sessionON ? <i className="far fa-pause-circle" /> : <i className="far fa-play-circle" />}
       </button>
