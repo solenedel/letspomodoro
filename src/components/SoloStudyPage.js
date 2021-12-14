@@ -37,8 +37,7 @@ const SoloStudyPage = ({ className }) => {
       return [countDownHours, countDownMinutes];
   }
    
-
-
+  let interval;
 
   const startTimer = () => {
     const currentYear = new Date().getFullYear();
@@ -49,6 +48,28 @@ const SoloStudyPage = ({ className }) => {
 
     const countDownDate = new Date(currentYear, currentMonth, currentDate, hoursToCount, minutesToCount);
     console.log('countDownDate', countDownDate);
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+
+      const distance = countDownDate - now;
+
+      const hours = Math.floor((distance % (24 * 60 * 60 * 1000)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (60 * 60 * 1000)) / (1000 * 60));
+      const seconds = Math.floor((distance % (60 * 1000)) / (1000));
+
+      if (distance < 0) {
+        // stop the timer
+        clearInterval(interval.current);
+      } else {
+        // update timer values
+        setClockHours(hours);
+        setClockMinutes(minutes);
+        setClockSeconds(seconds );
+      }
+    })
+
+
   };
 
   startTimer();
