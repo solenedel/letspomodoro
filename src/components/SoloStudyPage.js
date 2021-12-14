@@ -6,7 +6,7 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
-  const [hours, setHours] = useState(0);
+  const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState(30);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
