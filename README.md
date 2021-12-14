@@ -7,6 +7,7 @@
 - modal/different page for timer?
 - start group study feature
 - set up database
+- min/max range validation
 
 ## Features
 

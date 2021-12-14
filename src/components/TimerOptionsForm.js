@@ -1,8 +1,22 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
 
+// enforce using arrows to select focus and break period.
+// typing is prevented in order for max and min range to apply properly.
+window.onload = () => {
+  // add event listener to prevent the default behavior
+  const noTypingInputField = document.getElementsByClassName('time-input');
+  noTypingInputField[0].addEventListener('keypress', (e) => {
+    e.preventDefault();
+  });
+  noTypingInputField[1].addEventListener('keypress', (e) => {
+    e.preventDefault();
+  });
+};
+
 // eslint-disable-next-line
 const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
+
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -36,6 +50,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
             max="60"
             id="focus-period"
             name="focus-period"
+            className="time-input"
             value={timerSettings.focusPeriod}
             onChange={handleInputChangeFocus}
           />{' '}
@@ -50,6 +65,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
             max="60"
             id="break-period"
             name="break-period"
+            className="time-input"
             value={timerSettings.breakPeriod}
             onChange={handleInputChangeBreak}
           />{' '}
