@@ -32,9 +32,8 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
         <label htmlFor="focus-period">Focus period -  </label>
           <input
             type="number"
-            min="10"
-            max="120"
-            // defaultValue="50"
+            min="5"
+            max="60"
             id="focus-period"
             name="focus-period"
             value={timerSettings.focusPeriod}
@@ -47,9 +46,8 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
         <label htmlFor="break-period">Break period - </label>
           <input
             type="number"
-            min="5"
+            min="1"
             max="60"
-            // defaultValue="10"
             id="break-period"
             name="break-period"
             value={timerSettings.breakPeriod}

@@ -6,7 +6,6 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
-  const [hours, setHours] = useState();
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
@@ -45,7 +44,6 @@ const SoloStudyPage = ({ className }) => {
 
 
   // prepend 0 if values are less than 10
-  const timerHours = (hours < 10 ? `0${hours}` : hours);
   const timerMinutes = (minutes < 10 ? `0${minutes}` : minutes);
   const timerSeconds = (seconds < 10 ? `0${seconds}` : seconds);
 
@@ -64,7 +62,7 @@ const SoloStudyPage = ({ className }) => {
       </h3>
 
       <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings}  />
-      <StyledClock timerHours={timerHours} timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
+      <StyledClock timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>
   );
