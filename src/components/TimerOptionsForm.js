@@ -1,6 +1,5 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
-import { startSession } from '../helpers/timerFunctions';
 
 // eslint-disable-next-line
 const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
@@ -80,9 +79,9 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
       <button
         type="button"
         id="start-session"
-        onClick={() =>
-          startSession(timerSettings.focusPeriod, timerSettings.breakPeriod, timerSettings.cycles)
-        }
+        // onClick={() =>
+        //   startSession(timerSettings.focusPeriod, timerSettings.breakPeriod, timerSettings.cycles)
+        // }
       >
         Start session
         <i className="fas fa-stopwatch" />
