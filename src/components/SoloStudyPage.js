@@ -9,8 +9,7 @@ const SoloStudyPage = ({ className }) => {
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-
-
+  const [sessionON, setSessionON] = useState(false);
   const [timerSettings, setTimerSettings] = useState({
     focusPeriod: '',
     breakPeriod: '',
@@ -42,9 +41,9 @@ const SoloStudyPage = ({ className }) => {
   };
 
   // BUG: timer is starting directly before pressing the start button
-  // useEffect(() => {
-  //   startSession();
-  // }, [seconds]);
+  useEffect(() => {
+    if (sessionON) startSession();
+  }, [seconds]);
 
 
   // prepend 0 if values are less than 10
@@ -65,7 +64,7 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession}  />
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession} sessionON={sessionON} setSessionON={setSessionON} />
       <StyledClock timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>

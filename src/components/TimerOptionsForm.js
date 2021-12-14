@@ -16,7 +16,7 @@ window.onload = () => {
 };
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession }) => {
+const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession, sessionON, setSessionON }) => {
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -90,7 +90,14 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
           Confirm
         </button>
       </form>
-      <button type="button" id="start-session" onClick={() => startSession()}>
+      <button
+        type="button"
+        id="start-session"
+        onClick={() => {
+          setSessionON(true);
+          startSession();
+        }}
+      >
         Start session
         <i className="fas fa-stopwatch" />
       </button>
