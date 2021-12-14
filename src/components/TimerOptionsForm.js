@@ -6,6 +6,7 @@ import React from 'react';
 window.onload = () => {
   // add event listener to prevent the default behavior
   const noTypingInputField = document.getElementsByClassName('time-input');
+  // NOTE: not working without duplicate code for each element of the array:
   noTypingInputField[0].addEventListener('keypress', (e) => {
     e.preventDefault();
   });
@@ -15,8 +16,7 @@ window.onload = () => {
 };
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
-
+const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession }) => {
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -90,13 +90,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings  }) => {
           Confirm
         </button>
       </form>
-      <button
-        type="button"
-        id="start-session"
-        // onClick={() =>
-        //   startSession(timerSettings.focusPeriod, timerSettings.breakPeriod, timerSettings.cycles)
-        // }
-      >
+      <button type="button" id="start-session" onClick={() => startSession()}>
         Start session
         <i className="fas fa-stopwatch" />
       </button>

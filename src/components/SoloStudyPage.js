@@ -17,7 +17,7 @@ const SoloStudyPage = ({ className }) => {
     cycles: '',
   });
 
-  useEffect(() => {
+  const startSession = () => {
     let interval = setInterval(() => {
       // NOTE: see what happens without clearing interval (bad practice)
       clearInterval(interval);
@@ -38,9 +38,13 @@ const SoloStudyPage = ({ className }) => {
       } else {
         setSeconds(seconds - 1);
       }
-    }, 1000)
+    }, 1000);
+  };
 
-  }, [seconds]);
+  // BUG: timer is starting directly before pressing the start button
+  // useEffect(() => {
+  //   startSession();
+  // }, [seconds]);
 
 
   // prepend 0 if values are less than 10
@@ -61,7 +65,7 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings}  />
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession}  />
       <StyledClock timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>

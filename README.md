@@ -2,12 +2,13 @@
 
 ## TO DO
 
-- add hours feature to countdown
+- button to start timer
+- replace hard coded timer valiues with dynamic
 - logic for pause/resume session button
 - modal/different page for timer?
 - start group study feature
 - set up database
-- min/max range validation
+- add hours feature to countdown
 
 ## Features
 
