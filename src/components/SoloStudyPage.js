@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyledTimerOptionsForm } from './styled-components/TimerOptionsForm.style';
 import { StyledClock } from './styled-components/Clock.style';
 
@@ -18,6 +18,7 @@ const SoloStudyPage = ({ className }) => {
     cycles: '',
   });
 
+  /* 
 // helper function: convert minutes entered by user into hours and minutes
   const timeConverter = () => {
      let countDownHours;
@@ -35,7 +36,7 @@ const SoloStudyPage = ({ className }) => {
       // console.log('countDownMinutes: ', countDownMinutes );
 
       return [countDownHours, countDownMinutes];
-  }
+  } */
    
   let interval;
 
@@ -43,7 +44,7 @@ const SoloStudyPage = ({ className }) => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDate = new Date().getDate();
-    const hoursToCount = (timeConverter())[0];
+    const hoursToCount = new Date().getHours();
     const minutesToCount = (timeConverter())[1];
 
     const countDownDate = new Date(currentYear, currentMonth, currentDate, hoursToCount, minutesToCount);
@@ -65,14 +66,18 @@ const SoloStudyPage = ({ className }) => {
         // update timer values
         setClockHours(hours);
         setClockMinutes(minutes);
-        setClockSeconds(seconds );
+        setClockSeconds(seconds);
       }
     })
 
 
   };
 
-  startTimer();
+ 
+
+  useEffect(() => {
+     startTimer();
+  })
 
   return (
     <div className={className}>
