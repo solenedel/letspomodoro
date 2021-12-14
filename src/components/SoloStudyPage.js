@@ -6,9 +6,9 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
-  const [hours, setHours] = useState();
+  const [hours, setHours] = useState(1);
   const [minutes, setMinutes] = useState(25);
-  const [seconds, setSeconds] = useState(0);
+  const [seconds, setSeconds] = useState(5);
   const [displayMessage, setDisplayMessage] = useState(false);
 
 
@@ -28,13 +28,18 @@ const SoloStudyPage = ({ className }) => {
           setSeconds(59);
           setMinutes(minutes - 1);
         } else {
-          // reached the end of the timer
-          let minutes = displayMessage ? 24 : 4;
-          let seconds = 59;
 
-          setSeconds(seconds);
-          setMinutes(minutes);
-          setDisplayMessage(!displayMessage);
+          if (hours === 0) {
+            // reached the end of the timer
+            let minutes = displayMessage ? 24 : 4;
+            let seconds = 59;
+
+            setSeconds(seconds);
+            setMinutes(minutes);
+            setHours(hours);
+            setDisplayMessage(!displayMessage);
+          }
+        
         }
       } else {
         setSeconds(seconds - 1);
