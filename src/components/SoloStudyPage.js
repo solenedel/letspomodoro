@@ -32,6 +32,7 @@ const SoloStudyPage = ({ className }) => {
 
           setSeconds(seconds);
           setMinutes(minutes);
+          setSessionON(false);
           setDisplayMessage(!displayMessage);
         }
       } else {

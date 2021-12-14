@@ -102,7 +102,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         <i className="fas fa-stopwatch" />
       </button>
       {/* note: onClick -> change text to resume session */}
-      <button type="button" id="pause-session">
+      <button type="button" id="pause-session" onClick={() => setSessionON(!setSessionON)}>
         Pause session
         <i className="far fa-pause-circle" />
       </button>
