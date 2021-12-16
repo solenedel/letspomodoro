@@ -9,7 +9,7 @@ const SoloStudyPage = ({ className }) => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
-  const [sessionON, setSessionON] = useState(false);
+  // const [sessionON, setSessionON] = useState(false);
   const [timerSettings, setTimerSettings] = useState({
     focusPeriod: '',
     breakPeriod: '',
@@ -49,6 +49,7 @@ const SoloStudyPage = ({ className }) => {
   };
 
 // BUG: reloading page keeps current time but does not restart session
+/*
   useEffect(() => {
     setMinutes(JSON.parse(window.localStorage.getItem('minutes')));
     setSeconds(JSON.parse(window.localStorage.getItem('seconds')));
@@ -58,7 +59,7 @@ const SoloStudyPage = ({ className }) => {
     if (sessionON) startSession();
     window.localStorage.setItem('minutes', minutes);
     window.localStorage.setItem('seconds', seconds);
-  }, [seconds]);
+  }, [seconds]); */
 
 
   // prepend 0 if values are less than 10
@@ -79,7 +80,7 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession} sessionON={sessionON} setSessionON={setSessionON} />
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession} /* sessionON={sessionON} setSessionON={setSessionON}*/ />
       <StyledClock timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>

@@ -16,7 +16,7 @@ window.onload = () => {
 };
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession, sessionON, setSessionON }) => {
+const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession, /*sessionON, setSessionON */ }) => {
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -41,7 +41,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
   const handleClearOptnSubmit = (e) => {
     e.preventDefault();
 
-    setTimerSettings({ focusPeriod: 0, breakPeriod: 0, cycles: 0 });
+    setTimerSettings((prev) => ({ ...prev, focusPeriod: 0, breakPeriod: 0, cycles: 0 }));
   };
 
   return (
@@ -103,8 +103,8 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         type="button"
         id="start-session"
         onClick={() => {
-          setSessionON(!sessionON);
-          console.log('sessionON ', sessionON);
+          // setSessionON(!sessionON);
+          // console.log('sessionON ', sessionON);
           startSession();
         }}
       >
@@ -115,13 +115,15 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         type="button"
         id="pause-session"
         onClick={() => {
-          setSessionON(!sessionON);
-          console.log('sessionON ', sessionON);
+          // setSessionON(!sessionON);
+          // console.log('sessionON ', sessionON);
           startSession();
         }}
       >
-        {sessionON ? 'Pause session' : 'Resume session'}
-        {sessionON ? <i className="far fa-pause-circle" /> : <i className="far fa-play-circle" />}
+        {' '}
+        Pause/resume
+        {/* {sessionON ? 'Pause session' : 'Resume session'}
+        {sessionON ? <i className="far fa-pause-circle" /> : <i className="far fa-play-circle" />} */}
       </button>
     </section>
   );
