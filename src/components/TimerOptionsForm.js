@@ -34,8 +34,14 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
 
     // eslint-disable-next-line
     if (timerSettings.focusPeriod && timerSettings.breakPeriod && timerSettings.cycles) {
-      console.log('TIMER SETTINGS: ', timerSettings);
+      console.log('USER SUBMITTED TIMER SETTINGS: ', timerSettings);
     }
+  };
+
+  const handleClearOptnSubmit = (e) => {
+    e.preventDefault();
+
+    setTimerSettings({ focusPeriod: 0, breakPeriod: 0, cycles: 0 });
   };
 
   return (
@@ -88,6 +94,9 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         </div>
         <button type="submit" onClick={handleTimerOptnSubmit}>
           Confirm
+        </button>
+        <button type="submit" onClick={handleClearOptnSubmit}>
+          Clear options
         </button>
       </form>
       <button

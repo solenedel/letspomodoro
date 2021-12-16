@@ -18,33 +18,33 @@ const SoloStudyPage = ({ className }) => {
 
   const startSession = () => {
 
-     setMinutes(timerSettings.focusPeriod);
-
     let interval = setInterval(() => {
       // NOTE: see what happens without clearing interval (bad practice)
       clearInterval(interval);
 
      //BUG: runs from focusPeriod:59 to focusPeriod:00 then loops back.
-     
+     setMinutes(timerSettings.focusPeriod);
+
      
 
-      if (seconds === 0) {
-        if (minutes !== 0) {
-          setSeconds(59);
-          setMinutes(minutes - 1);
-        } else {
-          // reached the end of the timer
-          let minutes = displayMessage ? timerSettings.focusPeriod : timerSettings.breakPeriod;
-          let seconds = 59;
+      // if (seconds === 0) {
+      //   if (minutes !== 0) {
+      //     setSeconds(59);
+      //     setMinutes(minutes - 1);
+      //   } else {
+      //     // reached the end of the timer
+      //     let minutes = displayMessage ? timerSettings.focusPeriod : timerSettings.breakPeriod;
+      //     let seconds = 59;
 
-          setSeconds(seconds);
-          setMinutes(minutes);
-          setSessionON(false);
-          setDisplayMessage(!displayMessage);
-        }
-      } else {
-        setSeconds(seconds - 1);
-      }
+      //     setSeconds(seconds);
+      //     setMinutes(minutes);
+      //     setSessionON(false);
+      //     setDisplayMessage(!displayMessage);
+      //   }
+      // } else {
+      //   setSeconds(seconds - 1);
+      // }
+
     }, 1000);
   };
 
