@@ -6,7 +6,7 @@ import { StyledClock } from './styled-components/Clock.style';
 // eslint-disable-next-line
 const SoloStudyPage = ({ className }) => {
 
-  const [minutes, setMinutes] = useState(25);
+  const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [displayMessage, setDisplayMessage] = useState(false);
   const [sessionON, setSessionON] = useState(false);
@@ -17,9 +17,16 @@ const SoloStudyPage = ({ className }) => {
   });
 
   const startSession = () => {
+
+     setMinutes(timerSettings.focusPeriod);
+
     let interval = setInterval(() => {
       // NOTE: see what happens without clearing interval (bad practice)
       clearInterval(interval);
+
+     //BUG: runs from focusPeriod:59 to focusPeriod:00 then loops back.
+     
+     
 
       if (seconds === 0) {
         if (minutes !== 0) {
@@ -27,7 +34,7 @@ const SoloStudyPage = ({ className }) => {
           setMinutes(minutes - 1);
         } else {
           // reached the end of the timer
-          let minutes = displayMessage ? 24 : 4;
+          let minutes = displayMessage ? timerSettings.focusPeriod : timerSettings.breakPeriod;
           let seconds = 59;
 
           setSeconds(seconds);

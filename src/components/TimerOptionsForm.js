@@ -46,7 +46,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         <label htmlFor="focus-period">Focus period -  </label>
           <input
             type="number"
-            min="5"
+            min="1"
             max="60"
             id="focus-period"
             name="focus-period"
