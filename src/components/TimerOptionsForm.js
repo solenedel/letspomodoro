@@ -16,7 +16,7 @@ window.onload = () => {
 };
 
 // eslint-disable-next-line
-const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSession, /*sessionON, setSessionON */ }) => {
+const TimerOptionsForm = ({ className, timerSettings, setTimerSettings,  /* startSession, sessionON, setSessionON */ }) => {
   const handleInputChangeFocus = (e) => {
     setTimerSettings((prev) => ({ ...prev, focusPeriod: Number(e.target.value) }));
   };
@@ -105,7 +105,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         onClick={() => {
           // setSessionON(!sessionON);
           // console.log('sessionON ', sessionON);
-          startSession();
+          // startSession();
         }}
       >
         Start session
@@ -117,7 +117,7 @@ const TimerOptionsForm = ({ className, timerSettings, setTimerSettings, startSes
         onClick={() => {
           // setSessionON(!sessionON);
           // console.log('sessionON ', sessionON);
-          startSession();
+          // startSession();
         }}
       >
         {' '}

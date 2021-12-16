@@ -16,14 +16,18 @@ const SoloStudyPage = ({ className }) => {
     cycles: '',
   });
 
+  /*
   const startSession = () => {
 
     let interval = setInterval(() => {
       // NOTE: see what happens without clearing interval (bad practice)
       clearInterval(interval);
 
-     //BUG: runs from focusPeriod:59 to focusPeriod:00 then loops back.
      setMinutes(timerSettings.focusPeriod);
+     // no need to set the seconds relative to focusPeriod since user can only specify in minutes
+     
+
+    //BUG: runs from focusPeriod:59 to focusPeriod:00 then loops back.
 
      
 
@@ -47,6 +51,13 @@ const SoloStudyPage = ({ className }) => {
 
     }, 1000);
   };
+
+  */
+  // update timer numbers when setting/clearing timer settings
+  useEffect(() => {
+    console.log('test');
+    setTimerSettings((prev) => ({ ...prev, focusPeriod: 0, breakPeriod: 0, cycles: 0 }));
+  }, [timerSettings]);
 
 // BUG: reloading page keeps current time but does not restart session
 /*
@@ -80,7 +91,7 @@ const SoloStudyPage = ({ className }) => {
         <i className="fas fa-stopwatch-20" /> Choose your timer settings
       </h3>
 
-      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} startSession={startSession} /* sessionON={sessionON} setSessionON={setSessionON}*/ />
+      <StyledTimerOptionsForm timerSettings={timerSettings} setTimerSettings={setTimerSettings} /* startSession={startSession} sessionON={sessionON} setSessionON={setSessionON}*/ />
       <StyledClock timerMinutes={timerMinutes} timerSeconds={timerSeconds} displayMessage={displayMessage}
       />
     </div>
