@@ -16,68 +16,15 @@ const SoloStudyPage = ({ className }) => {
     cycles: '',
   });
 
-  /*
-  const startSession = () => {
-
-    let interval = setInterval(() => {
-      // NOTE: see what happens without clearing interval (bad practice)
-      clearInterval(interval);
-
-     setMinutes(timerSettings.focusPeriod);
-     // no need to set the seconds relative to focusPeriod since user can only specify in minutes
-     
-
-    //BUG: runs from focusPeriod:59 to focusPeriod:00 then loops back.
-
-     
-
-      // if (seconds === 0) {
-      //   if (minutes !== 0) {
-      //     setSeconds(59);
-      //     setMinutes(minutes - 1);
-      //   } else {
-      //     // reached the end of the timer
-      //     let minutes = displayMessage ? timerSettings.focusPeriod : timerSettings.breakPeriod;
-      //     let seconds = 59;
-
-      //     setSeconds(seconds);
-      //     setMinutes(minutes);
-      //     setSessionON(false);
-      //     setDisplayMessage(!displayMessage);
-      //   }
-      // } else {
-      //   setSeconds(seconds - 1);
-      // }
-
-    }, 1000);
-  };
-
-  */
-  // update timer numbers when setting/clearing timer settings
-  useEffect(() => {
-    console.log('test');
-    setTimerSettings((prev) => ({ ...prev, focusPeriod: 0, breakPeriod: 0, cycles: 0 }));
-  }, [timerSettings]);
-
-// BUG: reloading page keeps current time but does not restart session
-/*
-  useEffect(() => {
-    setMinutes(JSON.parse(window.localStorage.getItem('minutes')));
-    setSeconds(JSON.parse(window.localStorage.getItem('seconds')));
-  }, []);
-
-  useEffect(() => {
-    if (sessionON) startSession();
-    window.localStorage.setItem('minutes', minutes);
-    window.localStorage.setItem('seconds', seconds);
-  }, [seconds]); */
-
 
   // prepend 0 if values are less than 10
   const timerMinutes = (minutes < 10 ? `0${minutes}` : minutes);
   const timerSeconds = (seconds < 10 ? `0${seconds}` : seconds);
 
-  
+  useEffect(() => {
+    console.log('TEST');
+  }, [timerMinutes, timerSeconds, minutes, seconds]);
+
 
   return (
     <div className={className}>
